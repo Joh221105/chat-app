@@ -14,9 +14,10 @@ socketio = SocketIO(app)
 def hello_world():
     return render_template('index.html')
 
+# receives the incoming message from the front end, and then sends the message back to the frontend of the other user
 @socketio.on('message')
 def handle_message(data):
-    print('received message: ' + data)
+    send(data)
 
 
 if __name__ == "__main__":
