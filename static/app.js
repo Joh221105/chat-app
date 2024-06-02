@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const messageElement = document.createElement('div');
         // Set the text content of the div to the message
         messageElement.textContent = msg;
+        // adds message-class to each of the created div
+        messageElement.classList.add('message-class');
         // Append the new message div to the messages container
         messagesContainer.appendChild(messageElement);
     });
