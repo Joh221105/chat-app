@@ -29,6 +29,7 @@ body {
     height: 1000px;
     display: flex;
     flex-direction: column;
+    border-radius: 10px
 }
 
 #messages {
@@ -51,8 +52,17 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 #send-button:hover {
     background-color: #0056b3;
+}
+
+.message-class{
+    padding: 10px 0px 10px 20px;
+    margin: 5px 10px 5px 10px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    background-color: lightgoldenrodyellow;
 }
