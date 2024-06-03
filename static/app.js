@@ -7,15 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const messagesContainer = document.getElementById('messages');
 
     
-    // Sends the typed message to the backend when clicking the send button
-    sendButton.addEventListener('click', () => {
-        // saves input as message
+    function sendMessage() {
         const message = messageInput.value;
         if (message) {
-            // sends the message to backend
+            // Sends the message to backend
             socket.send(message);
-            // clear input
+            // Clears the input field
             messageInput.value = '';
+        }
+    }
+
+    // Sends the typed message to the backend when clicking the send button
+    sendButton.addEventListener('click', sendMessage);
+
+    // Sends the typed message to the backend when pressing the Enter key
+    messageInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            sendMessage();
         }
     });
 
